@@ -158,14 +158,5 @@ roc_model <- function(mtx, pData, method = c("caret", "h2o")) {
   
 }
 
-library(GEOquery)
-gse8586 <- getGEO("GSE8586", AnnotGPL = TRUE)[[1]]
-exprs_gse8586 <- exprs(gse8586)
-exprs_gse8586 <- data.table(Genes = fData_gse8586$`Gene symbol`,
-                            exprs_gse8586)
-exprs_gse8586 <- handling_duplicates(exprs_gse8586)
-pData_gse8586 <- pData(gse8586)
-fData_gse8586 <- fData(gse8586)
-pData_gse8586$condition <- factor(ifelse(grepl("nobpd", pData_gse8586$title), "NoBPD", "BPD"), levels = c("NoBPD", "BPD"))
-
-roc_model(exprs_gse8586[intersecting_genes_DNA_RNA, ], pData_gse8586, method = "caret")
+#### Example usage ####
+roc_model(exprs_gse8586, pData_gse8586, method = "caret")
