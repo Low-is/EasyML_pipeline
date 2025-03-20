@@ -5,4 +5,5 @@ This repository provides a streamlined and user-friendly pipeline for performing
 Currently, the roc_model() enables users to apply random forest classification (via caret) or use automated machine learning (h20.automl) (via h2o) for predictive modeling. 
 
 The pipeline is still being built to be highly adaptable and extend to incorporate additional ML algorithms. 
-[!example roc curve](ROC_RNA_rf.png) [!example roc curve](ROC_DNA_rf.png)
+[!example_1](ROC_RNA_rf.png) 
+[!example_2](ROC_DNA_rf.png)
